@@ -18,7 +18,7 @@ export default function Menu() {
       <h1>Monty Hall</h1>
       <p>Escolha a quantidade de portas, onde apenas uma se encontrará o presente, ache-o para ganhar!</p>
       <NumberInput text="Quantidade de Portas" value={doorAmount} onChange={newDoorAmount => setDoorAmount(newDoorAmount)} />
-      <Link href={`doorGame/${doorAmount}/${doorWithGift}`}>
+      <Link href={`doorGame/${doorAmount}/${doorWithGift}`} passHref>
         <button className={styles.startButton}>Jogar</button>
       </Link>
     </div>

@@ -22,7 +22,7 @@ export default function DoorGame() {
     const validDoorAmount = doors >= 3 && doors <= 100
     const validWithGift = withGift >= 1 && withGift <= doors
     setIsValid(validDoorAmount && validWithGift)
-  }, [doors])
+  }, [doors, router.query.doors, router.query.withGift])
 
   function doorRender() {
     return doors.map(door => {
@@ -36,7 +36,7 @@ export default function DoorGame() {
       <div className={styles.doors}>
         {isValid ? doorRender() : <h1>Combinação inválida ou fora dos limites!</h1>}
       </div>
-      <Link href="/">
+      <Link href="/" passHref>
         <button className={styles.restartButton}>Voltar</button>
       </Link>
     </div>
