@@ -1,7 +1,7 @@
 .menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
   width: 40%;
@@ -12,9 +12,13 @@
   background-color: #fff;
 }
 
+.menu h1 {
+  color: green;
+}
+
 .menu p {
   padding: 0 5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .startButton {

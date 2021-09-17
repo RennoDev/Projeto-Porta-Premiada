@@ -13,6 +13,10 @@
   align-self: stretch;
 }
 
+.doors h1 {
+  text-align: center;
+}
+
 .buttons {
   display: flex;
   justify-content: center;

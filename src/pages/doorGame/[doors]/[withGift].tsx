@@ -19,7 +19,7 @@ export default function DoorGame() {
   useEffect(() => {
     const doors = +router.query.doors
     const withGift = +router.query.withGift
-    const validDoorAmount = doors >= 3 && doors <= 100
+    const validDoorAmount = doors >= 3 && doors <= 10
     const validWithGift = withGift >= 1 && withGift <= doors
     setIsValid(validDoorAmount && validWithGift)
   }, [doors, router.query.doors, router.query.withGift])
@@ -34,7 +34,7 @@ export default function DoorGame() {
   return (
     <div className={styles.doorGame}>
       <div className={styles.doors}>
-        {isValid ? doorRender() : <h1>Combinação inválida ou fora dos limites!</h1>}
+        {isValid ? doorRender() : <div><h1>Combinação inválida ou fora dos limites!</h1></div>}
       </div>
       <Link href="/" passHref>
         <button className={styles.restartButton}>Voltar</button>
