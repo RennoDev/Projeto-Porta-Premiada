@@ -1,17 +1,23 @@
 import styles from '../styles/Menu.module.css'
 import Link from 'next/link'
 import NumberInput from './NumberInput'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Menu() {
-  const [doorAmount, setDoorAmount] = useState(5)
-  const [doorWithGift, setDoorWithGift] = useState(3)
+  const [doorAmount, setDoorAmount] = useState(3)
+  const [doorWithGift, setDoorWithGift] = useState(2)
+
+  useEffect(() => {
+    const max = doorAmount
+    const min = 1
+    setDoorWithGift(Math.floor(Math.random() * (max - min + 1)) + min)
+  }, [doorAmount])
 
   return (
     <div className={styles.menu}>
       <h1>Monty Hall</h1>
+      <p>Escolha a quantidade de portas, onde apenas uma se encontrará o presente, ache-o para ganhar!</p>
       <NumberInput text="Quantidade de Portas" value={doorAmount} onChange={newDoorAmount => setDoorAmount(newDoorAmount)} />
-      <NumberInput text="Porta com Presente" value={doorWithGift} onChange={newDoorWithGift => setDoorWithGift(newDoorWithGift)} />
       <Link href={`doorGame/${doorAmount}/${doorWithGift}`}>
         <button className={styles.startButton}>Jogar</button>
       </Link>
