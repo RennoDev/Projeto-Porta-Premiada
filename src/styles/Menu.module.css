@@ -34,3 +34,21 @@
     width: 40%;
   }
 }
+
+@media(max-width: 868px) {
+  .menu {
+    width: 50%;
+  }
+}
+
+@media(max-width: 668px) {
+  .menu {
+    width: 60%;
+  }
+}
+
+@media(max-width: 568px) {
+  .menu {
+    width: 80%;
+  }
+}
